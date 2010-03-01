@@ -6,13 +6,18 @@
  */ 
 jQuery.fn.jslides = function(options) {
     jQuery.fn.jslides.slides = [];
+    jQuery.fn.jslides.first = true;
     jQuery.fn.jslides.current = 0;
     jQuery.fn.jslides.title = $("head title").text();
     var elem = $(this),
         jslides = jQuery.fn.jslides;
+
+    jQuery.fn.jslides.options = $.extend({
+        animation: "fade"
+    }, options);
     
     // Fix clearing as well as setting the aprop class for styling
-    elem.addClass("jslides").append('<hr class="clearfix"/>');
+    elem.addClass("jslides").append('<br class="clearfix"/>');
 
     /**
      * Find all first level divs (slides) under the root
@@ -65,19 +70,40 @@ jQuery.fn.jslides = function(options) {
     // Return the node so its chainable
     return $(this);
 }
-$.fn.jslides.show = function(num) {
+
+// Fade between two slides
+$.fn.jslides.animation = {};
+$.fn.jslides.animation.fade = function(from, to, callback) {
     var jslides = jQuery.fn.jslides;
+    if (!jslides.first) {
+        from.fadeOut(500, function() {
+            to.fadeIn(500);
+        });
+    }
+    else
+        to.show();
+    if (callback)
+        callback(to);
+}
+
+$.fn.jslides.show = function(num) {
+    var jslides = jQuery.fn.jslides,
+        options = jQuery.fn.jslides.options;
 
     // Test if request is plausible
     if (typeof(jslides.slides[num]) != "undefined") {
         // Remove current
-        jslides.slides[jslides.current].node.removeClass("current").hide();
+        var prev = jslides.slides[jslides.current].node.removeClass("current");//.hide();
+        var cur = jslides.slides[num].node;
+        cur.addClass("current");//.show();
 
-        var cur = jslides.slides[num];
-        cur.node.addClass("current").show();
         jslides.current = num;
-        window.location.hash = "#" + (num + 1);
-        $("head title").text(jslides.title + " :: " + cur.title);
+        jslides.animation[options.animation](prev, cur, function(cur) {
+            window.location.hash = "#" + (jslides.current + 1);
+            $("head title").text(jslides.title + " :: " + cur.attr("title"));
+            if (jslides.first)
+                jslides.first = false;
+        });
     }
     else {
     }
