@@ -1,0 +1,16 @@
+There exists some js keynote/presentation tools like S5 and slidy, but i found these
+tools to be very lacking when i was about to write an introduction to jQuery.
+Now, obviously it doesnt make much sense to write js/html presentations
+in anything but a browser, and you dont want to write the entire presentation from the ground
+up.
+
+What S5 and Slidy is lacking that i wanted to add was:
+* Autoformatting of code
+* Being able to add a piece of js that you can run, as well as display in a formatted manner
+* A visual logger
+* Slide transitions
+* List transitions
+* Mini view of all slides
+* Configurable
+* Bookmarkable
+* Autoplay

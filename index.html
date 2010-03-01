@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>En innføring i jQuery</title>
+    <link type="text/css" href="jslides.css" rel="stylesheet"></link>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <meta name="description" content="Lær grunnleggende jquery" />
+    <meta name="author" content="Raymond Julin" />
+</head>
+<body>
+<div id="slides">
+    <div class="slide" title="Hva er jQuery">
+        <p>Nå vil du lære masse fint</p>
+    </div>
+
+    <div class="slide" title="Hello world">
+        <div id="s2-hw" class="example-target"></div>
+        <script type="text/javascript">
+            $("#s2-action").click(function(e) {
+                $("#s2-hw").text("Hei verden");
+            });
+        </script>
+    </div>
+</div>    
+<script type="text/javascript" src="jslides.js"></script>
+<script type="text/javascript">
+(function($) {
+    $("#slides").jslides({});
+})(jQuery);
+</script>
+</body>
+</html>

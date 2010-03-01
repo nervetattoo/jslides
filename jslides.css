@@ -1,0 +1,49 @@
+/*
+ * This is the CSS for the CSS presentation.  
+ */
+ 
+/*
+ * We start by setting the font for this presentation.  CSS fonts provide
+ * a list so the browser can render the first font it available and fail
+ * gracefully.
+ */
+body {
+    font-family: Verdana, "Times New Roman","Bitstream Charter",Times, sans;
+    font-size: 14px;
+}
+
+.jslides {
+    margin: 3em;
+    position: relative;
+}
+
+/*
+ * A slide is the basic building block of the presentation.  A slide is just 
+ * a div tag with this class to position it to cover the entire screen.
+ */
+.jslide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: none;
+    clear: both;
+}
+
+/* CLEAR FIX*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
