@@ -14,3 +14,24 @@ What S5 and Slidy is lacking that i wanted to add was:
 * Configurable
 * Bookmarkable
 * Autoplay
+
+PROGRESS
+
+= Session #1 = DONE
+The easy stuff really
+* Paginate between slides (20 min done)
+* Dont allow going to non existant slide (10 min done)
+* Change title for each slide (5 min done)
+* Allow jumping directly to slide (7 min done)
+* One basic transition between slides (20 min done)
+
+= Session #2 =
+Seems an unlikely goal, i fear i might just get one done
+* Syntax highlighting (40 minutes)
+* JS code triggering and linking to syntax highlighting (20)
+
+= Session #3 =
+* Incremental data inside slides (one bullet point pr click etc) (20 min)
+* Footer with x/y slides and "help" + copyright (15 min)
+* Sliding transitions (10 min)
+* Time for session#2 leftovers (15 min)
